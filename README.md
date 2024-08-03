@@ -48,36 +48,33 @@ Este proyecto tiene como objetivo desarrollar una aplicación web para el regist
 ## Estructura del Proyecto
 
 ```bash
-├── src
-│   ├── config
-│   │   └── passport.js
-│   ├── controllers
-│   │   ├── authController.js
-│   │   ├── historiaClinicaController.js
-│   │   ├── pacienteController.js
-│   │   └── usuarioController.js
-│   ├── models
-│   │   ├── HistoriaClinica.js
-│   │   ├── Paciente.js
-│   │   └── Usuario.js
-│   ├── routes
-│   │   ├── authRoutes.js
-│   │   ├── historiaClinicaRoutes.js
-│   │   ├── pacienteRoutes.js
-│   │   └── usuarioRoutes.js
-│   ├── views
-│   │   ├── layouts
-│   │   │   └── main.hbs
-│   │   ├── auth
-│   │   │   └── login.hbs
-│   │   ├── dashboard.hbs
-│   │   └── historias
-│   │       └── historia.hbs
-│   ├── app.js
-│   └── server.js
-├── .env.example
-├── package.json
-└── README.md
+MediCloud/
+├── .github/ # GitHub configuration files and workflows
+├── src/
+├── config/ # Configuration files and scripts
+├── public/ # Static assets
+│ │ ├── css/ # Stylesheets
+│ │ ├── js/ # Scripts
+│ │ ├── images/ # Images
+│ │ ├── favicon.ico
+│ ├── components/ # Handlebars components and partials
+│ ├── controllers/ # Express route controllers
+│ ├── middleware/ # Express middleware
+│ ├── models/ # Mongoose models
+│ ├── routes/ # Express routes
+│ ├── services/ # Business logic and services
+│ ├── views/ # Handlebars templates
+│ ├── server/ # Server-related files
+│ │ ├── db/ # Database connection files
+│ │ │ └── db_connection.js # MongoDB connection configuration
+│ │ └── server.js # Entry point for the server
+├── .env # Environment variables
+├── .eslintignore # ESLint ignore file
+├── .eslintrc.json # ESLint configuration
+├── .gitignore # Git ignore file
+├── package.json # Node.js dependencies and scripts
+├── README.md # Project documentation
+└── tailwind.config.js # TailwindCSS configuration
 ```
 
 ## Configuración
