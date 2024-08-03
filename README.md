@@ -47,7 +47,7 @@ Este proyecto tiene como objetivo desarrollar una aplicación web para el regist
 
 ## Estructura del Proyecto
 
-\`\`\`
+```bash
 ├── src
 │   ├── config
 │   │   └── passport.js
@@ -78,7 +78,7 @@ Este proyecto tiene como objetivo desarrollar una aplicación web para el regist
 ├── .env.example
 ├── package.json
 └── README.md
-\`\`\`
+```
 
 ## Configuración
 
