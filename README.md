@@ -96,19 +96,16 @@ SESSION_SECRET=tu_secreto_de_sesion
 
 ### Rutas Protegidas
 
-- `GET /dashboard`: Panel principal para usuarios autenticados.
-- `GET /historias`: Listado de historias clínicas.
-- `POST /historias`: Crear una nueva historia clínica.
-- `PUT /historias/:id`: Modificar una historia clínica existente.
-- `GET /historias/:id`: Ver detalles de una historia clínica.
-- `DELETE /historias/:id`: Eliminar una historia clínica.
+Las rutas protegidas requieren autenticación y autorización adecuadas. Algunas de las funcionalidades clave incluyen:
+
+- Acceso al panel principal.
+- Gestión de historias clínicas.
+- Acceso a la información del paciente.
+- Funcionalidades administrativas.
 
 ### Rutas de Administración
 
-- `GET /admin/usuarios`: Gestión de usuarios.
-- `POST /admin/usuarios`: Crear un nuevo usuario.
-- `PUT /admin/usuarios/:id`: Modificar un usuario existente.
-- `DELETE /admin/usuarios/:id`: Eliminar un usuario.
+Las rutas administrativas están disponibles solo para los administradores del sistema. Permiten la gestión de usuarios y configuraciones del sistema.
 
 ## Tipos de Usuarios y Permisos
 
