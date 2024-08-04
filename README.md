@@ -1,54 +1,80 @@
-# MediCloud
-## Descripción
+# MENTH
 
-Este proyecto tiene como objetivo desarrollar una aplicación web para el registro de historias clínicas que cumpla con los aspectos legales específicos de Argentina. La aplicación está construida utilizando el stack MENTH (MongoDB, ExpressJS, NodeJS, TailwindCSS y Handlebars) y aprovecha el paquete `create-menth-app` para la configuración inicial y la autenticación mediante Passport.
+Base template for MongoDB, Express, Node.js, TailwindCSS, and Handlebars projects.
 
-## Tabla de Contenidos
+## Overview
 
-1. [Requisitos Previos](#requisitos-previos)
-2. [Instalación](#instalación)
-3. [Estructura del Proyecto](#estructura-del-proyecto)
-4. [Configuración](#configuración)
-5. [Rutas y Endpoints](#rutas-y-endpoints)
-6. [Tipos de Usuarios y Permisos](#tipos-de-usuarios-y-permisos)
-7. [Estructura de la Base de Datos](#estructura-de-la-base-de-datos)
-8. [Aspectos Legales](#aspectos-legales)
-9. [Contribución](#contribución)
-10. [Licencia](#licencia)
+MENTH is a robust starter template designed to streamline the development process for web applications using MongoDB, Express, Node.js, TailwindCSS, and Handlebars. This template provides a solid foundation to build upon, ensuring best practices and a cohesive integration of the technologies involved.
 
-## Requisitos Previos
+## Features
 
-- Node.js (>= 14.x)
-- npm (>= 6.x)
-- MongoDB (>= 4.x)
+- **MongoDB**: A NoSQL database for storing and managing data.
+- **Express**: A web application framework for Node.js, providing a robust set of features for building web and mobile applications.
+- **Node.js**: A JavaScript runtime built on Chrome's V8 JavaScript engine, enabling server-side JavaScript execution.
+- **TailwindCSS**: A utility-first CSS framework for rapidly building custom designs.
+- **Handlebars**: A simple templating language to create HTML templates with embedded expressions.
 
-## Instalación
+## Table of Contents
 
-1. Clona el repositorio:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+To get started with MENTH, follow these steps:
+
+1. **Clone the repository**:
+
     ```bash
-    git clone https://github.com/tu-usuario/registro-historias-clinicas.git
-    cd registro-historias-clinicas
+    git clone https://github.com/yourusername/menth-template.git
+    cd menth-template
     ```
 
-2. Instala las dependencias:
+2. **Install dependencies**:
+
     ```bash
     npm install
     ```
 
-3. Configura las variables de entorno creando un archivo `.env` en la raíz del proyecto. Utiliza el archivo `.env.example` como referencia:
-    ```bash
-    cp .env.example .env
+3. **Set up environment variables**:
+
+    Create a `.env` file in the root directory and add your MongoDB connection string:
+
+    ```env
+    MONGODB_URI=your_mongodb_connection_string
     ```
 
-4. Inicia el servidor:
+## Usage
+
+1. **Start the development server**:
+
+    ```bash
+    npm run dev
+    ```
+
+    This command will start the server with live reloading enabled.
+
+2. **Build for production**:
+
+    ```bash
+    npm run build
+    ```
+
+    This command will compile and minify your CSS using TailwindCSS.
+
+3. **Start the production server**:
+
     ```bash
     npm start
     ```
 
-## Estructura del Proyecto
-
+## Project Structure
 ```bash
-MediCloud/
+MENTH/
 ├── .github/ # GitHub configuration files and workflows
 ├── src/
 ├── config/ # Configuration files and scripts
@@ -77,76 +103,22 @@ MediCloud/
 └── tailwind.config.js # TailwindCSS configuration
 ```
 
-## Configuración
+## Configuration
 
-Asegúrate de configurar las variables de entorno en el archivo `.env`. Aquí hay un ejemplo de configuración:
+- **MongoDB**: Configure your MongoDB URI in the `.env` file.
+- **TailwindCSS**: Modify the `tailwind.config.js` file to customize your TailwindCSS setup.
+- **Express**: Add or modify routes in the `src/routes` directory and their corresponding controllers in `src/controllers`.
 
-\`\`\`
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/registro-historias-clinicas
-SESSION_SECRET=tu_secreto_de_sesion
-\`\`\`
+## Contributing
 
-## Rutas y Endpoints
+We welcome contributions to improve MENTH. To contribute, please follow these steps:
 
-### Rutas Públicas
+1. **Fork the repository**.
+2. **Create a new branch** (`git checkout -b feature/your-feature`).
+3. **Commit your changes** (`git commit -m 'Add some feature'`).
+4. **Push to the branch** (`git push origin feature/your-feature`).
+5. **Open a pull request**.
 
-- `GET /login`: Página de inicio de sesión.
-- `POST /login`: Proceso de autenticación.
+## License
 
-### Rutas Protegidas
-
-Las rutas protegidas requieren autenticación y autorización adecuadas. Algunas de las funcionalidades clave incluyen:
-
-- Acceso al panel principal.
-- Gestión de historias clínicas.
-- Acceso a la información del paciente.
-- Funcionalidades administrativas.
-
-### Rutas de Administración
-
-Las rutas administrativas están disponibles solo para los administradores del sistema. Permiten la gestión de usuarios y configuraciones del sistema.
-
-## Tipos de Usuarios y Permisos
-
-- **Administrador del Sistema:** Gestión de usuarios y configuración general de la aplicación.
-- **Médico:** Acceso y modificación de historias clínicas de sus pacientes.
-- **Enfermero/a:** Acceso y modificación de registros médicos bajo la supervisión de un médico.
-- **Paciente o Familiar de Paciente:** Acceso limitado a la historia clínica propia o de su familiar.
-
-### Relaciones
-
-- **Usuario - Rol:** Un usuario tiene un rol específico.
-- **Paciente - Historia Clínica:** Un paciente puede tener múltiples historias clínicas.
-- **Médico/Enfermero - Historia Clínica:** Una historia clínica puede ser modificada por un médico o un enfermero asignado.
-
-## Aspectos Legales
-
-Para cumplir con las normativas legales en Argentina, la aplicación debe considerar los siguientes puntos:
-
-### Ley de Protección de Datos Personales (Ley 25.326)
-
-- **Consentimiento Informado:** Los pacientes deben dar su consentimiento para el tratamiento de sus datos personales.
-- **Derecho de Acceso y Rectificación:** Los pacientes tienen derecho a acceder y corregir sus datos.
-- **Confidencialidad:** Los datos médicos deben ser tratados con estricta confidencialidad y solo accesibles por personal autorizado.
-
-### Ley de Derechos del Paciente (Ley 26.529)
-
-- **Historia Clínica Digital:** Las historias clínicas deben ser completas y accesibles solo por el personal médico autorizado y el propio paciente.
-- **Conservación de Datos:** Las historias clínicas deben ser conservadas durante un período mínimo de 15 años.
-
-## Contribución
-
-Las contribuciones son bienvenidas. Para contribuir, por favor sigue los siguientes pasos:
-
-1. Haz un fork del proyecto.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios.
-4. Haz commit de tus cambios (`git commit -m 'Añadir nueva funcionalidad'`).
-5. Sube tus cambios (`git push origin feature/nueva-funcionalidad`).
-6. Abre un Pull Request.
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
-
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.

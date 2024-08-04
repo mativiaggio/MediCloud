@@ -1,0 +1,30 @@
+<html lang="en" data-mode="light">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      MENTH - Admin{{#if title}} | {{title}}{{/if}}
+    </title>
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    {{#if css}}
+      <link rel="stylesheet" href="/css/admin/{{css}}" />
+    {{/if}}
+  </head>
+
+  <body>
+    {{{body}}}
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="/js/admin/main.js"></script>
+    <script type="module" src="/js/plugins.js"></script>
+    <script type="module" src="/js/functions.js"></script>
+  </body>
+
+</html>
